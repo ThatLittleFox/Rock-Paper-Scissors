@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Rock, Paper, Scissors!</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <script>
+
+ //A variable called computerChoice exists to store a string data type.
+let computerChoice
+
+
+//A varaible that holds the options in an array for the computer to choose from randomly
+let myArray;
+
+myArray = ["rock", "paper", "scissors"];
+
+//Computer randomly selects a value of "Rock", "Paper", or "Scissors" to store into variable computerChoice
+function computerPlay(){
+    return myArray [~~(Math.random()* myArray.length)];
+}
+
+computerChoice = computerPlay();
+//A variable called userChoice exists to store a string data type.
+let userChoice
+
+//An output shows a message: "Let's play Rock Paper Scissors. Enter your choice:"
+userChoice = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
+
+//A function will run to turn all letters to lowercase so they can directly equal "rock", "paper", or "scissors", regardless of the user entering uppercase, lowercase or a combination of the two. 
+function makeLowerCase() {
+    return userChoice.toLowerCase()
+}
+userChoice = makeLowerCase(userChoice)
+
+//Print result of user's input and computer's choice (for testing)
+console.log(userChoice)
+console.log(computerChoice)
+
+//Somehow we must ensure that a user only types rock paper or scissors...
+ if ((userChoice != "rock") && (userChoice != "paper") && (userChoice != "scissors")){
+     console.log("Choose rock, paper or scissors to play")
+ } 
+
+//A function will run to compare computerChoice to userChoice. It is the chaos below.
+
+//If userChoice = "paper", and computer enters "rock", output will be "You win, paper beats rock!"
+if ((userChoice === "paper") && (computerChoice === "rock")){
+    console.log("You win, paper beats rock!")
+} else
+
+//If userChoice = "paper", and computer enters "scissors", output will be "You lose, scissors beat paper!"
+if ((userChoice === "paper") && (computerChoice === "scissors")) {
+    console.log("You lose, scissors beat paper!")
+} else
+
+//If userChoice = "paper", and computer enters "paper", output will be "You both chose paper, it's a tie!"
+if ((userChoice === "paper") && (computerChoice === "paper")) {
+    console.log("You both chose paper, it's a tie!")
+} else
+
+//If userChoice = "rock", and computer enters "paper", output will be "You lose, paper beats rock!"
+if ((userChoice ==="rock") && (computerChoice === "paper")) {
+    console.log("You lose, paper beats rock!")
+} else
+
+//If userChoice = "rock", and computer enters "scissors", output will be "You win, rock beats scissors!"
+if ((userChoice === "rock") && (computerChoice === "scissors")) {
+    console.log("You win, rock beats scissors!")
+} else
+
+//If userChoice = "rock", and computer enters "rock", the output will be "You both chose rock, it's a tie!"
+if ((userChoice === "rock") && (computerChoice === "rock")) {
+    console.log("You both chose rock, it's a tie!")
+} else
+
+//If userChoice = "scissors" and computerChoice = "paper", the output will be "You win, scissors beat paper!"
+if ((userChoice === "scissors") && (computerChoice === "paper")) {
+    console.log("You win, scissors beat paper!")
+} else
+
+//If userChoice = "scissors" and computerChoice = "rock", the output will be "You lose, rock beats scissors!"
+if ((userChoice === "scissors") && (computerChoice === "rock")) {
+    console.log("You lose, rock beats scissors!")
+} else
+
+//If userChoice = "scissors" and computerChoice = "scissors", the output will be "You both chose scissors, it's a tie!"
+if ((userChoice === "scissors") && (computerChoice === "scissors")) {
+    console.log("You both chose scissors, it's a tie!")
+} else {
+    console.log("You need to pick rock, paper, or scissors to play!")
+}
+    </script>
+</body>
